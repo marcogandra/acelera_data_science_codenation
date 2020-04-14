@@ -1,0 +1,17 @@
+Para criar um ambiente com Anaconda:
+
+1) vai na pasta onde você quer criar o ambiente
+2) conda create -n nome_do_ambiente
+3) conda activate nome_do_ambiente
+
+Para desativar o ambiente usar conda deactivate
+
+4) Instalar o pip: conda install pip
+5) Instalar o streamlit: pip install streamlit
+
+É um framework muito bom para data science.
+
+6) Criar uma imagem com os pacotes que estão nesse ambiente:
+pip freeze > requirements.txt
+
+Para instalar o que está nesse documento usar pip install -r requeriments.txt

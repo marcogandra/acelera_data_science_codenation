@@ -91,13 +91,8 @@ def q1():
     # realiza o teste de shapiro-wilk
     teste = sct.shapiro(amostra)
     
-    # obtem o resultado
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-    
-    return resultado
+    # retorna o resultado
+    return teste[1] > 0.05
     pass
 
 
@@ -154,13 +149,8 @@ def q2():
     # realiza o teste jarque-bera
     teste = sct.jarque_bera(amostra)
     
-    # obtem o resultado
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-    
-    return resultado
+    # retorna o resultado    
+    return teste[1] > 0.05
     pass
 
 
@@ -198,13 +188,8 @@ def q3():
     # realiza o teste de D'Agostino-Pearson
     teste = sct.normaltest(amostra2)
     
-    # obtem o resultado
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-    
-    return resultado
+    # retorna o resultado    
+    return teste[1] > 0.05
     pass
 
 
@@ -256,13 +241,8 @@ def q4():
     # realiza o teste de D'Agostino-Pearson
     teste = sct.normaltest(log_amostra2)
     
-    # obtem o resultado
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-    
-    return resultado
+    # retorna o resultado
+    return teste[1] > 0.05
     pass
 
 
@@ -320,12 +300,7 @@ def q5():
     teste = sct.ttest_ind(bra, usa, equal_var=False)
     
     # resultado do teste
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-        
-    return resultado
+    return teste[1] > 0.05
     pass
 
 
@@ -348,12 +323,7 @@ def q6():
     teste = sct.ttest_ind(bra, can, equal_var=False)
     
     # resultado do teste
-    if (teste[1] < 0.05):
-        resultado = False
-    else:
-        resultado = True
-        
-    return resultado
+    return teste[1] > 0.05
     pass
 
 

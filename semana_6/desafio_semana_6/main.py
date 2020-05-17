@@ -86,7 +86,7 @@ fifa.info()
 # In[7]:
 
 
-# remove as colunas com dados ausentes
+# remove as linhas com dados ausentes
 fifa.dropna(inplace=True)
 
 
@@ -108,7 +108,6 @@ def q1():
     perc_pc1 = pca.explained_variance_ratio_
     
     return round(perc_pc1[0],3)
-    pass
 
 
 # In[10]:
@@ -129,7 +128,6 @@ def q2():
     pca = PCA(0.95).fit(fifa)
     
     return len(pca.explained_variance_ratio_)
-    pass
 
 
 # In[12]:
@@ -171,10 +169,9 @@ def q3():
     coordenadas = components.dot(x)
     
     # cria a tupla
-    tupla = (round(coordenadas[0],3), round(coordenadas[1],3))
+    tupla = tuple(np.round(coordenadas[0:2],3))
     
     return tupla
-    pass
 
 
 # In[15]:
@@ -188,7 +185,7 @@ q3()
 # 
 # Realiza RFE com estimador de regressão linear para selecionar cinco variáveis, eliminando uma a uma. Quais são as variáveis selecionadas? Responda como uma lista de nomes de variáveis.
 
-# (Faltou mencionar ne... É a variável `Overall`.)
+# (Faltou mencionar que a variável resposta é a variável `Overall`.)
 
 # In[16]:
 
@@ -209,8 +206,6 @@ def q4():
 
     selecionadas = list(aux[aux['bool']]['feature'])
     return selecionadas
-    
-    pass
 
 
 # In[17]:
